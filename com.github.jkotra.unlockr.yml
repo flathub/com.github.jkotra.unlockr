@@ -1,6 +1,6 @@
 app-id: com.github.jkotra.unlockr
 runtime : org.gnome.Platform
-runtime-version : '42'
+runtime-version : '43'
 sdk : org.gnome.Sdk
 command: unlockr
 
@@ -13,11 +13,12 @@ finish-args:
 
 modules:
   - name: qpdf
-    buildsystem: autotools
+    buildsystem: cmake-ninja
+    builddir: true
     sources:
       - type: git
         url: 'https://github.com/qpdf/qpdf'
-        tag: "release-qpdf-10.6.3"
+        tag: "v11.1.0"
     cleanup:
       - "*.a"
       - "*.la"
@@ -30,4 +31,4 @@ modules:
     sources:
       - type: git
         url: "https://github.com/jkotra/unlockr.git"
-        tag: "0.05"
+        tag: "0.06"
