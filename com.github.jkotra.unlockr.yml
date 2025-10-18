@@ -16,7 +16,7 @@ modules:
     sources:
       - type: git
         url: 'https://github.com/qpdf/qpdf'
-        tag: "v11.4.0"
+        tag: "v12.2.0"
     cleanup:
       - "*.a"
       - "*.la"
