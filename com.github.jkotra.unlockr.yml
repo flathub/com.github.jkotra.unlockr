@@ -5,7 +5,6 @@ sdk : org.gnome.Sdk
 command: unlockr
 
 finish-args:
-  - --socket=wayland
   - --share=ipc
   - --filesystem=xdg-documents
   - --device=dri
