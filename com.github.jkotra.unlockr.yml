@@ -11,24 +11,31 @@ finish-args:
   - --filesystem=xdg-documents
   - --device=dri
 
+cleanup:
+  - /include
+  - /lib/cmake
+  - /lib/pkgconfig
+  - /share/doc
+  - /share/man
+  - '*.la'
+  - '*.a'
+
 modules:
   - name: qpdf
     buildsystem: cmake-ninja
     builddir: true
+    cleanup:
+      - /bin
     sources:
       - type: git
-        url: 'https://github.com/qpdf/qpdf'
-        tag: "v12.2.0"
-    cleanup:
-      - "*.a"
-      - "*.la"
-      - "/include"
-      - "/bin"
-      - "/lib/pkgconfig"
+        url: https://github.com/qpdf/qpdf
+        tag: v12.3.2
+        commit: a898bb3a7289d1d05789d6d3f0d5dd534943a8da
 
   - name: unlockr
     buildsystem: meson
     sources:
       - type: git
-        url: "https://github.com/jkotra/unlockr.git"
-        tag: "0.9.2"
+        url: https://github.com/jkotra/unlockr.git
+        tag: '0.9.2'
+        commit: 9134f42d94f760eecd265cd6984a4a04017fe8bc
